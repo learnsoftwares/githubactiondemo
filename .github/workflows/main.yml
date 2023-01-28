@@ -1,0 +1,16 @@
+
+name: azure resource group create
+
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Azure CLI Action
+      uses: Azure/cli@v1.0.7
+        with:
+          inlineScript: az group create -l westus -n MyResourceGroup
+
+  
