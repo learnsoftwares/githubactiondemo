@@ -37,4 +37,4 @@ jobs:
       uses: Azure/webapps-deploy@v2
       with:
         app-name: azurewebapp23434
-        package: target/*.war
+        package: gameoflife-web/target/*.war
