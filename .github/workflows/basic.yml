@@ -28,5 +28,8 @@ jobs:
         java-version: '8'
     - name: Build with Maven
       run: mvn package --file pom.xml
-
- 
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - run: 
+        az webapp list --query "[?state=='Running']"
