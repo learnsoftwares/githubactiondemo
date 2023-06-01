@@ -28,13 +28,4 @@ jobs:
         java-version: '8'
     - name: Build with Maven
       run: mvn package --file pom.xml
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - run: 
-        az webapp list
-    - name: Azure WebApp
-      uses: Azure/webapps-deploy@v2
-      with:
-        app-name: azurewebapp3242
-        package: gameoflife-web/target/*.war
+    
